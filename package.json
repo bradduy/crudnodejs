@@ -1,0 +1,17 @@
+{
+  "name": "ejs1901",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon index.js -e js,ejs,css"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "reload": "^2.2.2"
+  }
+}
