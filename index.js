@@ -2,7 +2,7 @@ const express = require('express');
 const reload = require('reload');
 
 const parser = require('body-parser').urlencoded({ extended: false });
-
+const { Singer } = require('./Singer');
 const app = express();
 
 app.use(parser);
@@ -10,28 +10,47 @@ app.use(parser);
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-    res.render('index', { singers: [] });
+    Singer.find({})
+    .then(singers => res.render('index', { singers }))
 });
 
 app.get('/remove/:id', (req, res) => {
     const { id } = req.params;
-    // res.redirect('/');
+    Singer.findByIdAndRemove(id)
+    .then(singer => {
+        if (!singer) throw new Error('Cannot find singer.');
+        res.redirect('/');
+    })
+    .catch(error => res.send(error.message));
 });
 
 app.get('/add', (req, res) => res.render('add'));
 
 app.get('/update/:id', (req, res) => {
-    // res.render('update', { singer });
+    Singer.findById(req.params.id)
+    .then(singer => {
+        if (!singer) throw new Error('Cannot find singer.');
+        res.render('update', { singer });        
+    })
+    .catch(error => res.send(error.message));
 });
 
 app.post('/update/:id', (req, res) => {
     const { name, link, image } = req.body;
-    // res.redirect('/');
+    Singer.findByIdAndUpdate(req.params.id, { name, link, image })
+    .then(singer => {
+        if (!singer) throw new Error('Cannot find singer.');
+        res.redirect('/');        
+    })
+    .catch(error => res.send(error.message));
 });
 
 app.post('/add', (req, res) => {
     const { link, name, image } = req.body;
-    // res.redirect('/');
+    const singer = new Singer({ name, link, image });
+    singer.save()
+    .then(() => res.redirect('/'))
+    .catch(error => res.send(error.message));
 });
 
 app.listen(3000, () => console.log('Server started!'));

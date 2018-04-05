@@ -14,8 +14,8 @@ const Singer = mongoose.model('Singer', singerSchema);
 
 module.exports = { Singer };
 
-Singer.find({})
-.then(x => console.log(x));
+// Singer.find({})
+// .then(x => console.log(x));
 
 // Singer.insertMany([
 //     { name: 'Karik', link: 'https://mp3.zing.vn/nghe-si/Karik', image: 'https://zmp3-photo.zadn.vn/thumb/240_240/avatars/a/0/a0927398989d4c5b18c56880bd56442b_1509531352.jpg' },
