@@ -1,9 +1,15 @@
 const express = require('express');
-const reload = require('reload');
 
 const parser = require('body-parser').urlencoded({ extended: false });
 const { Singer } = require('./Singer');
 const app = express();
+
+
+app.locals.isDev = !process.env.PORT;
+
+if (!process.env.PORT) {
+    require('reload')(app);
+}
 
 app.use(parser);
 
@@ -53,5 +59,4 @@ app.post('/add', (req, res) => {
     .catch(error => res.send(error.message));
 });
 
-app.listen(3000, () => console.log('Server started!'));
-reload(app);
+app.listen(process.env.PORT || 3000, () => console.log('Server started!'));
