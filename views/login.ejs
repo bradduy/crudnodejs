@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <title>Sign In</title>
+</head>
+
+<body>
+    <div style="padding-top: 20px; padding-left: 43px">
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand" href="#">Welcome to website</a>
+        </nav>
+    </div>
+    <div class="container" style="background-color: rgba(140, 194, 220, 0.72); padding-bottom: 50px">
+        <div class="col-md-12" style="margin-top: 50px">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3">
+                <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            </div>
+            <div class="col-md-7">
+                <form action="/login" method="post" class="form-group" style="width: 60%">
+                    <div class="form-group">
+                        <label for="name">Email:</label>
+                        <input type="text" name="email" id="name" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="linpasswordk">Password:</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign In</button>
+                </form>
+                <label>If you do not have any account. Please</label>
+                <a href="/signup">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

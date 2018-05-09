@@ -5,34 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-        crossorigin="anonymous">
-    <title>Singers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Add</title>
 </head>
 
 <body>
     <div class="container">
-        <a href="/">Show all singers</a>
-        <h1>Add new Singer</h1>
+        <h1 style="margin-top: 20px">New product</h1>
+        <br>
         <form action="/add" method="post" class="form-group">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="name" placeholder="Enter name">
             </div>
             <div class="form-group">
-                <label for="">Link</label>
-                <input type="text" class="form-control" name="link">
+                <label for="">Price</label>
+                <input type="number" class="form-control" name="price" placeholder="Enter price">
             </div>
-            <div class="form-group">
-                <label for="">Image</label>
-                <input type="text" class="form-control" name="image">
-            </div>
-            <button class="btn btn-success">Add singer</button>
+            <button class="btn btn-success">Submit</button>
         </form>
+        <a class="btn btn-default btn-sm" href="/">View products</a>
     </div>
 </body>
 
 </html>
-<% if (isDev) { %>
-    <script src="reload/reload.js"></script>
-<% } %>

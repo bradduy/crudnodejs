@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <title>Product</title>
+</head>
+
+<body class="container">
+  <h2 style="margin-top: 30px">Dashboard</h2>
+  <br>
+  <table class="table table-striped" style="background-color: rgb(170, 170, 170)">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach((product, index) => { %>
+        <tr>
+          <td>
+            <%= index + 1 %>
+          </td>
+          <td>
+            <%= product.name %>
+          </td>
+          <td>
+            <%= product.price %>
+          </td>
+          <td>
+            <a class="btn btn-danger" style="float: right" href="/remove/<%= product.id %>">Remove</a>
+            <a class="btn btn-primary" style="float: right;" href="/update/<%= product.id %>">Update</a>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+  <a class="btn btn-success" href="/add">Add product</a>
+</body>
+
+</html>
