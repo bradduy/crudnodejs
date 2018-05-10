@@ -124,6 +124,4 @@ app.post('/add', (req, res) => {
     .catch(error => res.send(error.message));
 });
 
-app.delete('/:id', )
-
 app.listen(process.env.PORT || 3000, () => console.log('Server started!'));
