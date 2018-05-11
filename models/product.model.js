@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/product')
+mongoose.connect('mongodb://localhost/meanjwt')
     .then(() => console.log('Database connected'))
     .catch(() => process.exit(1));
 
@@ -12,6 +12,7 @@ const productSchema = new mongoose.Schema({
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = { Product };
+
 // Product.find({})
 // .then(x => console.log(x));
 
